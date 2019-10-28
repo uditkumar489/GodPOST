@@ -16,6 +16,7 @@ require('../config/env');
 
 const fs = require('fs');
 const chalk = require('chalk');
+const cslate = require('slate');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const clearConsole = require('react-dev-utils/clearConsole');
@@ -33,6 +34,7 @@ const createDevServerConfig = require('../config/webpackDevServer.config');
 
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
+const paths = require('../config/paths/...');
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
